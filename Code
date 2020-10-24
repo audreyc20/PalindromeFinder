@@ -1,0 +1,29 @@
+//imports
+import java.util.Scanner;
+
+class Main {
+  //assign varriables
+  static Scanner userInput = new Scanner(System.in);
+  static String forwardStr = "";
+  static String backwardsStr = "";
+
+  public static void main(String[] args) {
+    //takes in the user's input
+    System.out.println("-------------------------------------------");
+    System.out.println("Enter a string:");
+    String str = userInput.nextLine();
+    forwardStr = str;
+    System.out.println();
+
+    //runs thought the user's input but backwards and compares if they are equal
+    for ( int i = forwardStr.length() - 1; i >= 0; i-- ) {
+      backwardsStr = backwardsStr + forwardStr.charAt(i);  
+      if (i == 0 && forwardStr.equals(backwardsStr))  {
+        System.out.println("It is a palindrome"); 
+        } 
+      else if (i == 0)  {
+        System.out.println("It is not a palindrome");   
+        }  
+    }
+  }
+}
